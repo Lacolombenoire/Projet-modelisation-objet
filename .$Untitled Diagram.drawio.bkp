@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2024-07-18T18:06:10.933Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.6.4 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="Lz9Dz1VqObj22F3P5kql" version="24.6.4" type="device" pages="2">
+<mxfile host="Electron" modified="2024-07-18T18:06:27.806Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.6.4 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="srr6omZjt3lZyPPMDWhb" version="24.6.4" type="device" pages="2">
   <diagram name="Cas d&#39;utilisation" id="NDDJf6NNWKpsKH6rvCn7">
     <mxGraphModel dx="2924" dy="2232" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -384,13 +384,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="3miqeEUiuu1nhUXQByUN-24" value="0..*" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="160" y="602" width="60" height="30" as="geometry" />
+          <mxGeometry x="160" y="436" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="3miqeEUiuu1nhUXQByUN-25" value="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="160" y="680" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="3miqeEUiuu1nhUXQByUN-26" value="Est relié à" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="170" y="640" width="60" height="30" as="geometry" />
+          <mxGeometry x="160" y="540" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="3miqeEUiuu1nhUXQByUN-27" value="Projet" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="590" y="710" width="180" height="146" as="geometry" />
