@@ -1,24 +1,40 @@
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Projet {
     
-    private String Date_debut;
+    private Date Date_debut;
+    private String Nom;
 
-   
-    public String getDate_debut() {
+    public Projet(String nom, Date date_debut, Date Date_fin, int Numero_identification) {
+
+
+
+        this.Nom = nom;
+        this.Date_debut = date_debut;
+        this.Date_fin = Date_fin;
+        this.Numero_identification = Numero_identification;
+
+
+    }
+
+
+
+    public Date getDate_debut() {
         // Automatically generated method. Please do not modify this code.
         return this.Date_debut;
     }
 
     
-    public void setDate_debut(final String value) {
+    public void setDate_debut(final Date value) {
         // Automatically generated method. Please do not modify this code.
         this.Date_debut = value;
     }
 
  
-    private String Nom;
+    
 
     
     public String getNom() {
@@ -33,31 +49,31 @@ public class Projet {
     }
 
     
-    private String Date_fin;
+    private Date Date_fin;
 
     
-    public String getDate_fin() {
+    public Date getDate_fin() {
         // Automatically generated method. Please do not modify this code.
         return this.Date_fin;
     }
 
    
-    public void setDate_fin(final String value) {
+    public void setDate_fin(final Date value) {
         // Automatically generated method. Please do not modify this code.
         this.Date_fin = value;
     }
 
   
-    private String Numero_identification;
+    private int Numero_identification;
 
     
-    public String getNumero_identification() {
+    public int getNumero_identification() {
         // Automatically generated method. Please do not modify this code.
         return this.Numero_identification;
     }
 
    
-    public void setNumero_identification(final String value) {
+    public void setNumero_identification(final int value) {
         // Automatically generated method. Please do not modify this code.
         this.Numero_identification = value;
     }

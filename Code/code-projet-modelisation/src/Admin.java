@@ -1,5 +1,10 @@
+import java.util.Date;
 
 public class Admin extends Employe {
+
+    public Admin(int taux_horaire, int taux_supplementaire, String nom, int numero_identifiant, int numero_assurance_social, Date date_embauche, Poste poste, Projet projet) {
+        super(taux_horaire, taux_supplementaire, nom, numero_identifiant, numero_assurance_social, date_embauche, poste, projet);
+    }
 
     public void Changer_employer_projet() {
     }

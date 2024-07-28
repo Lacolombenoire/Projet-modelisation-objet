@@ -5,6 +5,10 @@ public class Poste {
    
     private String nom;
 
+
+    public Poste(String nom) {
+        this.nom = nom;
+    }
    
     public String getNom() {
         // Automatically generated method. Please do not modify this code.

@@ -6,6 +6,20 @@ public class Employe {
    
     private int taux_horaire;
 
+
+    public Employe(int taux_horaire, int taux_supplementaire, String nom, int numero_identifiant, int numero_assurance_social, Date date_embauche, Poste poste, Projet projet) {
+
+        this.taux_horaire = taux_horaire;
+        this.taux_supplementaire = taux_supplementaire;
+        this.nom = nom;
+        this.numero_assurance_social = numero_assurance_social;
+        this.numero_identifiant = numero_identifiant;
+        this.date_embauche = date_embauche;
+        this.poste = poste;
+        this.projet = projet;
+
+
+    }
  
     public int getTaux_horaire() {
         // Automatically generated method. Please do not modify this code.
@@ -19,31 +33,31 @@ public class Employe {
     }
 
     
-    private String taux_supplementaire;
+    private int taux_supplementaire;
 
   
-    public String getTaux_supplementaire() {
+    public int getTaux_supplementaire() {
         // Automatically generated method. Please do not modify this code.
         return this.taux_supplementaire;
     }
 
     
-    public void setTaux_supplementaire(final String value) {
+    public void setTaux_supplementaire(final int value) {
         // Automatically generated method. Please do not modify this code.
         this.taux_supplementaire = value;
     }
 
     
-    private String numero_identifiant;
+    private int numero_identifiant;
 
     
-    public String getNumero_identifiant() {
+    public int getNumero_identifiant() {
         // Automatically generated method. Please do not modify this code.
         return this.numero_identifiant;
     }
 
  
-    public void setNumero_identifiant(final String value) {
+    public void setNumero_identifiant(final int value) {
         // Automatically generated method. Please do not modify this code.
         this.numero_identifiant = value;
     }
@@ -94,16 +108,16 @@ public class Employe {
     }
 
     
-    private String numero_assurance_social;
+    private int numero_assurance_social;
 
    
-    public String getNumero_assurance_social() {
+    public int getNumero_assurance_social() {
         // Automatically generated method. Please do not modify this code.
         return this.numero_assurance_social;
     }
 
     
-    public void setNumero_assurance_social(final String value) {
+    public void setNumero_assurance_social(final int value) {
         // Automatically generated method. Please do not modify this code.
         this.numero_assurance_social = value;
     }
