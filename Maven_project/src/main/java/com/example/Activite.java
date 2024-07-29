@@ -1,3 +1,5 @@
+package com.example;
+
 import java.util.Date;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,8 +13,13 @@ public class Activite {
     private String Nom;
     private Projet projet;
     public Discipline discipline;
+    private int project_id;
 
-    public Activite(final String Nom, final Poste poste) {
+    public Activite(final String Nom, Projet projet, Discipline discipline,int id) {
+        this.Nom = Nom;
+        this.projet = projet;
+        this.project_id = id;
+
     }
 
     public Date getDate_debut () {
@@ -45,15 +52,26 @@ public class Activite {
         // Automatically generated method. Please do not modify this code.
         this.projet = value;
     }
+    public int get_project_id(){ return this.project_id; }
 
     private void Calculer_temps_total() {
     }
 
-    public void Terminer_activité() {
+    public void Terminer_activité(int project_id,int employee_id) {
+        String operation_type = "Punch_out"
+
+        Date now = Date();
+
+        Log log = new Log(now,project_id,operation_type,employee_id)
 
     }
 
-    public void Commencer_activité() {
+    public void Commencer_activité(int project_id,int employee_id) {
+        String operation_type = "Punch_in"
+
+        Date now = Date();
+
+        Log log = new Log(now,project_id,operation_type,employee_id)
 
     }
     
