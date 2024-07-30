@@ -1,6 +1,30 @@
-[ {
-  "_project_id" : 2,
-  "_date_operation" : 1722281166132,
-  "_employee_id" : 2,
-  "_operation_type" : "Punch_out"
-} ]
+[
+  {
+    "id": 0,
+    "employee_id": 0
+  },
+  {
+    "date_operation": "Jul 30, 2024, 8:32:22 AM",
+    "operation_type": "Punch_in",
+    "id": 2,
+    "employee_id": 2
+  },
+  {
+    "date_operation": "Jul 30, 2024, 8:32:27 AM",
+    "operation_type": "Punch_out",
+    "id": 2,
+    "employee_id": 2
+  },
+  {
+    "date_operation": "Jul 30, 2024, 8:35:55 AM",
+    "operation_type": "Punch_in",
+    "id": 2,
+    "employee_id": 2
+  },
+  {
+    "date_operation": "Jul 30, 2024, 8:36:00 AM",
+    "operation_type": "Punch_out",
+    "id": 2,
+    "employee_id": 2
+  }
+]

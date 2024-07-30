@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 
 import java.io.File;
 import java.io.FileReader;
@@ -27,6 +28,7 @@ public class Activite {
     private Projet projet;
     public Discipline discipline;
     private int project_id;
+    private Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     public Activite(final String Nom, Projet projet, Discipline discipline,int id) {
         this.Nom = Nom;
@@ -80,11 +82,7 @@ public class Activite {
         
         System.out.println("terminer activiter dans les logs");
 
-        List<Log> logs = readLogsFromFile();
-
-        logs.add(log);
-        
-        log_register(logs);
+        addLog(log);
 
     }
 
@@ -97,44 +95,34 @@ public class Activite {
 
         System.out.println("Commencer activiter dans les logs");
 
-        List<Log> logs = readLogsFromFile();
+        addLog(log);
 
-        System.out.println("test");
+    }
 
+    public void addLog(Log log) {
+        List<Log> logs = readLogs();
         logs.add(log);
-
-        log_register(logs);
-
+        writeLogs(logs);
     }
 
-    private static List<Log> readLogsFromFile() {
+    private List<Log> readLogs() {
         String path = "Maven_project\\src\\main\\java\\com\\example\\log.json";
-        ObjectMapper mapper = new ObjectMapper();
-        List<Log> logs = new ArrayList<>();
-        File file = new File(path);
-
-        if (file.exists()) {
-            try {
-                logs = mapper.readValue(file, new TypeReference<List<Log>>() {});
-            } catch (IOException e) {
-                System.err.println("Error reading JSON from file: " + e.getMessage());
-            }
-        }
-
-        return logs;
-    }
-
-
-    public void log_register(List<Log> logs){
-        String path = "Maven_project\\src\\main\\java\\com\\example\\log.json";
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            mapper.writerWithDefaultPrettyPrinter().writeValue(new File(path), logs);
-            System.out.println("JSON data written to file successfully.");
+        try (JsonReader reader = new JsonReader(new FileReader(path))) {
+            Type logListType = new TypeToken<ArrayList<Log>>() {}.getType();
+            return gson.fromJson(reader, logListType);
         } catch (IOException e) {
-            System.err.println("Error writing JSON to file: " + e.getMessage());
+            e.printStackTrace();
+            return new ArrayList<>();
         }
+    }
 
+    private void writeLogs(List<Log> logs) {
+        String path = "Maven_project\\src\\main\\java\\com\\example\\log.json";
+        try (FileWriter writer = new FileWriter(path)) {
+            gson.toJson(logs, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
 }
