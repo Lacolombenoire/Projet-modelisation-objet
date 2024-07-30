@@ -1,11 +1,24 @@
 package com.example;
 
+import java.util.ArrayList;
 import java.util.Date;
-import com.fasterxml.jackson.databind.JsonNode;
+import java.util.List;
+
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
+
+import java.io.*;
+import java.lang.reflect.Type;
+
 
 public class Activite {
     
@@ -19,6 +32,7 @@ public class Activite {
         this.Nom = Nom;
         this.projet = projet;
         this.project_id = id;
+        this.Date_debut = new Date();
 
     }
 
@@ -58,20 +72,68 @@ public class Activite {
     }
 
     public void Terminer_activité(int project_id,int employee_id) {
-        String operation_type = "Punch_out"
+        String operation_type = "Punch_out";
 
-        Date now = Date();
+        Date now = new Date();
 
-        Log log = new Log(now,project_id,operation_type,employee_id)
+        Log log = new Log(now,project_id,operation_type,employee_id);
+        
+        System.out.println("terminer activiter dans les logs");
+
+        List<Log> logs = readLogsFromFile();
+
+        logs.add(log);
+        
+        log_register(logs);
 
     }
 
     public void Commencer_activité(int project_id,int employee_id) {
-        String operation_type = "Punch_in"
+        String operation_type = "Punch_in";
 
-        Date now = Date();
+        Date now = new Date();
 
-        Log log = new Log(now,project_id,operation_type,employee_id)
+        Log log = new Log(now,project_id,operation_type,employee_id);
+
+        System.out.println("Commencer activiter dans les logs");
+
+        List<Log> logs = readLogsFromFile();
+
+        System.out.println("test");
+
+        logs.add(log);
+
+        log_register(logs);
+
+    }
+
+    private static List<Log> readLogsFromFile() {
+        String path = "Maven_project\\src\\main\\java\\com\\example\\log.json";
+        ObjectMapper mapper = new ObjectMapper();
+        List<Log> logs = new ArrayList<>();
+        File file = new File(path);
+
+        if (file.exists()) {
+            try {
+                logs = mapper.readValue(file, new TypeReference<List<Log>>() {});
+            } catch (IOException e) {
+                System.err.println("Error reading JSON from file: " + e.getMessage());
+            }
+        }
+
+        return logs;
+    }
+
+
+    public void log_register(List<Log> logs){
+        String path = "Maven_project\\src\\main\\java\\com\\example\\log.json";
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            mapper.writerWithDefaultPrettyPrinter().writeValue(new File(path), logs);
+            System.out.println("JSON data written to file successfully.");
+        } catch (IOException e) {
+            System.err.println("Error writing JSON to file: " + e.getMessage());
+        }
 
     }
     

@@ -1,3 +1,4 @@
+package com.example;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,14 +10,10 @@ public class Projet {
     private String Nom;
 
     public Projet(String nom, Date date_debut, Date Date_fin, int Numero_identification) {
-
-
-
         this.Nom = nom;
         this.Date_debut = date_debut;
         this.Date_fin = Date_fin;
         this.Numero_identification = Numero_identification;
-
 
     }
 
