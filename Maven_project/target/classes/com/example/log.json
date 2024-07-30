@@ -26,5 +26,17 @@
     "operation_type": "Punch_out",
     "id": 2,
     "employee_id": 2
+  },
+  {
+    "date_operation": "Jul 30, 2024, 9:46:39 AM",
+    "operation_type": "Punch_in",
+    "id": 2,
+    "employee_id": 2
+  },
+  {
+    "date_operation": "Jul 30, 2024, 9:46:44 AM",
+    "operation_type": "Punch_out",
+    "id": 2,
+    "employee_id": 2
   }
 ]
