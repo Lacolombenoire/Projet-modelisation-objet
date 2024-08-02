@@ -34,36 +34,32 @@ public class main {
         Entreprise.entreprise.projets.add(documentaion);
         Entreprise.entreprise.projets.add(marketing);
         
-        System.out.println("creation de l'activiter");
+        //System.out.println("creation de l'activiter");
         Activite activite = new Activite("test", marketing, null, 1);
-        System.out.println("Commencer Activiter");
-        activite.Commencer_activité(gaming.getNumero_identification(),Mathieu.getNumero_identifiant());
-        Thread.sleep(5000);
-        System.out.println("Terminer Activiter");
-        activite.Terminer_activité(gaming.getNumero_identification(),Mathieu.getNumero_identifiant());
+        //System.out.println("Commencer Activiter");
+        //activite.Commencer_activité(gaming.getNumero_identification(),Mathieu.getNumero_identifiant());
+        //Thread.sleep(5000);
+        //System.out.println("Terminer Activiter");
+        
 
         String filePath = "entreprise.txt";
-
-        
-
-        try {
-            
-            
-        } catch(Exception e) {
-            System.out.println(e);
+        boolean end = true;
+        while(end){
+            interface_console test = new interface_console();
+            boolean ans = test.connexion();
+            if(ans){
+                while(true){
+                    int choice = test.main_menu();
+                    if(choice == 1){
+                        activite.Terminer_activité(gaming.getNumero_identification(),Mathieu.getNumero_identifiant());
+                    }else if(choice == 3){
+                        activite.Commencer_activité(gaming.getNumero_identification(),Mathieu.getNumero_identifiant());
+                    }else{
+                        System.out.println("Vous vous êtes bien déconnecté");
+                        break;
+                    }
+                }
+            }
         }
-        
-
-
-
-
-
-
     }
-
-
-
-
-
-
 }

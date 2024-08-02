@@ -28,14 +28,18 @@ public class Activite {
     private Projet projet;
     public Discipline discipline;
     private int project_id;
-    private Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private Logger logger = new Logger();
+    private boolean state = false;
+
 
     public Activite(final String Nom, Projet projet, Discipline discipline,int id) {
         this.Nom = Nom;
         this.projet = projet;
         this.project_id = id;
         this.Date_debut = new Date();
-
+    }
+    public boolean get_state(){
+        return state;
     }
 
     public Date getDate_debut () {
@@ -74,55 +78,28 @@ public class Activite {
     }
 
     public void Terminer_activité(int project_id,int employee_id) {
+
+        state = false;
+
         String operation_type = "Punch_out";
 
         Date now = new Date();
 
         Log log = new Log(now,project_id,operation_type,employee_id);
-        
-        System.out.println("terminer activiter dans les logs");
 
-        addLog(log);
-
+        logger.addLog(log);
     }
 
     public void Commencer_activité(int project_id,int employee_id) {
+
+        state = true;
+
         String operation_type = "Punch_in";
 
         Date now = new Date();
 
         Log log = new Log(now,project_id,operation_type,employee_id);
 
-        System.out.println("Commencer activiter dans les logs");
-
-        addLog(log);
-
+        logger.addLog(log);
     }
-
-    public void addLog(Log log) {
-        List<Log> logs = readLogs();
-        logs.add(log);
-        writeLogs(logs);
-    }
-
-    private List<Log> readLogs() {
-        String path = "Maven_project\\src\\main\\java\\com\\example\\log.json";
-        try (JsonReader reader = new JsonReader(new FileReader(path))) {
-            Type logListType = new TypeToken<ArrayList<Log>>() {}.getType();
-            return gson.fromJson(reader, logListType);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return new ArrayList<>();
-        }
-    }
-
-    private void writeLogs(List<Log> logs) {
-        String path = "Maven_project\\src\\main\\java\\com\\example\\log.json";
-        try (FileWriter writer = new FileWriter(path)) {
-            gson.toJson(logs, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
 }
