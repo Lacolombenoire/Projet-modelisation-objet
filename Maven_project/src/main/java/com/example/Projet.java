@@ -14,10 +14,7 @@ public class Projet {
         this.Date_debut = date_debut;
         this.Date_fin = Date_fin;
         this.Numero_identification = Numero_identification;
-
     }
-
-
 
     public Date getDate_debut() {
         // Automatically generated method. Please do not modify this code.

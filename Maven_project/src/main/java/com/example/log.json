@@ -224,5 +224,23 @@
     "operation_type": "connexion mathieu",
     "id": 0,
     "employee_id": 0
+  },
+  {
+    "date_operation": "Aug 3, 2024, 1:36:55 PM",
+    "operation_type": "connexion e1",
+    "id": 0,
+    "employee_id": 0
+  },
+  {
+    "date_operation": "Aug 3, 2024, 1:36:59 PM",
+    "operation_type": "Punch_in",
+    "id": 1,
+    "employee_id": 1
+  },
+  {
+    "date_operation": "Aug 3, 2024, 1:37:25 PM",
+    "operation_type": "connexion e1",
+    "id": 0,
+    "employee_id": 0
   }
 ]
